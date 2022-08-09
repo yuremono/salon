@@ -1,0 +1,504 @@
+$text:scale(.8, 1.4);
+
+// @import "compass/css3";
+
+
+*, *::before, *::after{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+body {
+  background-color: #fff;
+  word-break: keep-all;
+  line-break: strict;
+  word-wrap: break-word;
+  overflow-wrap: break-word;
+}
+body {
+  font-family:
+   "Helvetica Neue",
+    Arial,
+    "Hiragino Kaku Gothic ProN",
+    "Hiragino Sans",
+    Meiryo,
+    sans-serif;
+}
+a{
+  text-decoration: none;
+  // transform: $text;
+  transform-origin: left;
+  display: block;
+  font-size: .5vw;
+  // font-weight: bold;
+  color: #000;
+  
+}
+img{
+  width: 100%;
+  display: block;
+}
+span, p{
+
+  // transform: scaleY(calc(4 / 3));
+  font-weight: 300;
+}
+li{
+  list-style: none;
+}
+.l-wrapper{
+  max-width: 1440px;
+  margin: 0 auto;
+  // background-color: #eee;
+}
+.circle{
+  // background-color: #777;
+  width: 100%;
+  transform: translateX(-20%);
+}
+#c2{
+  clip-path: path("M960,0c82.84,0,150,44.77,150,100s-67.16,100-150,100s-150-44.77-150-100S877.16,0,960,0");
+  
+  animation: clipy 3s linear infinite;
+  @keyframes clipy {
+    0%{      clip-path: path("M960,0c82.84,0,150,44.77,150,100s-67.16,100-150,100s-150-44.77-150-100S877.16,0,960,0");    }
+    20%{      clip-path: path("M1920,0c-80,0-810,74.77-810,130s-67.16,70-150,70s-150-14.77-150-70S78,0,0,0");    }
+    25%{      clip-path: path("M1995,0c-80,0-75,74.77-75,130s-877.16,70-960,70S0,185.23,0,130S3,0-75,0");    }
+    100%{      clip-path: path("M1995,0c-80,0,192,111.77,192,167s-1144.16,33-1227,33s-1194,21.23-1194-34S3,0-75,0");    }
+// <path id="m1" class="st1" d="M960,0c82.84,0,150,44.77,150,100s-67.16,100-150,100s-150-44.77-150-100S877.16,0,960,0"/>
+	// <path id="m2" class="st1" d="M1920,0c-80,0-810,44.77-810,100s-67.16,100-150,100s-150-44.77-150-100S78,0,0,0"/>
+	// <path id="m3" class="st1" d="M1995,0c-80,0-75,44.77-75,100s-877.16,100-960,100S0,155.23,0,100S3,0-75,0"/>
+	// <path id="m4" class="st1" d="M1995,0c-80,0,192,111.77,192,167s-1144.16,33-1227,33s-1194,21.23-1194-34S3,0-75,0"/>
+  }
+}
+.c-title--md{
+  font-size: 3vmax;
+  font-weight: 400;
+  transform: scale(1,3);
+  letter-spacing: 2vw;
+  text-shadow: #FFF .1vmax .1vmax ;
+  line-height: calc(300vh / 8);
+}
+.p-fv{
+  overflow: hidden;
+  position: relative;
+  &__lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 50vh;
+  }
+  &__rect{
+    // height: 50vh;
+    background-color: #ddd;
+    transition: all 1.5s ease-in-out;
+    overflow: hidden;
+    // &:hover{      transform: scale(1.1); z-index: 1;}
+  }
+  &__link{
+    height: 50vh; 
+    display: grid;
+    place-items: center;
+    font-size: 5vmax;
+    font-weight: 100;
+    border: 1px solid #000;
+    position: relative;
+  }
+  &__img{
+    object-fit: cover;
+    height: 100%;
+    transform-origin: left top;
+    transform: scale(1.5) ;
+    animation: angleLT 6s linear infinite;
+    transition: all 1s ;
+    // &:hover {animation-play-state: paused;opacity: 1 !important;}    
+  }
+  @keyframes angleLT {
+    0%{        opacity: 0.0;
+      transform: scale(1.5) translateX(-33%);
+    }
+    20%{ opacity: 1;}
+    80%{opacity: 1;}
+    100%{          opacity: 0.3;
+      transform: scale(1.5) translateX(-0%);
+    }
+  }
+  &__img--RT{
+    animation: angleRT 9s linear infinite;
+  }
+  @keyframes angleRT {
+    0%{        opacity: 0.0;
+      transform: scale(1.5) translate(-0%, -33%);
+    }
+    15%{ opacity: 1;}
+    85%{opacity: 1;}
+    100%{          opacity: 0.3;
+      transform: scale(1.5) translate(-33%, -0%);
+    }
+  }
+  &__img--LB{
+    animation: angleLB 12s linear infinite;
+  }
+  @keyframes angleLB {
+    0%{        opacity: 0.0;
+      transform: scale(1.5) translate(-33%, -0%);
+    }
+    10%{ opacity: 1;}
+    90%{opacity: 1;}
+    100%{          opacity: 0.3;
+      transform: scale(1.5) translate(-33%, -33%);
+    }
+  }
+  &__img--RB{
+    animation: angleRB 6s linear infinite;
+    animation-play-state: paused;
+  }
+  @keyframes angleRB {
+    0%{        opacity: 0.3;
+      transform: scale(1.5) translate(-0%, -0%);
+    }
+    10%{ opacity: 1;}
+    90%{opacity: 1;}
+    100%{          opacity: 0.3;
+      transform: scale(1.5) translate(-33%, -0%);
+    }
+  }
+  &__title{
+    display: block;
+    width: 100%;
+    max-width: 720px;
+    text-align: center;
+    right: 0;
+    // margin: 0 0 0 auto;
+    position: absolute;
+    font-weight: 100;
+    transform: scale(1,3);
+    letter-spacing: 2vw;
+    mix-blend-mode: difference;
+    text-shadow: #FFF .1vmax .1vmax ;
+    pointer-events: none;
+    // display: block;
+    &--right{
+      right: unset;left: 0;
+    }
+
+  }
+}
+
+.nail{  transform-origin: top left;}
+.remove{  transform-origin: top right;}
+.esthe{  transform-origin: bottom left;}
+.p-fv-area{
+  width: 50vw; 
+  // height: 150vh;
+  grid-row: span 3;
+  position: relative;
+  &--row2{grid-row: 2 span;}
+  &__img{
+    opacity: 0.5;
+    object-fit: cover;
+    height: 100%;
+    &--sm{
+      position: absolute;
+      bottom: 0;left: 0;
+      height: 50%;width: 50%;
+      object-fit: cover;
+      object-position: top;
+    }
+  }
+  &__inner{
+    position: absolute;top: 0;
+    height: 100%; width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__info{
+    position: absolute;top: 0;
+    height: 100%; width: 100%;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    text-align: center;
+  }
+  &__title{
+    font-size: 3vmax;
+    display: block;
+    width: 100%;
+    text-align: center;
+    font-weight: 500;
+    transform: none;
+    transform: scale(1,3);
+    letter-spacing: 2vw;
+    mix-blend-mode: normal;
+    text-shadow: #FFF .1vmax .1vmax ;
+    // height: calc(100vh / 8 * 3);
+    line-height: calc(300vh / 8);
+  }
+  &__item{
+    width: 100%;height: 100%;
+  }
+  &__link{
+    width: 100%;height: 100%;
+    display: block;
+
+  }
+  
+  &__text{
+    font-size: .8vmax;
+    font-weight: 300;
+    color: #000;
+    padding: 0 10%;
+    transform-origin: top;
+    transform: scale(1,2.5);
+    letter-spacing: 1vmin;
+    text-shadow: none;
+  }
+}
+.Mbtn{
+  // pointer-events: all;
+  transition: all 0.5s;
+  position: fixed;
+  right: 0 ;top: 50%; 
+  translate: 0 -50%;
+  display: grid;place-items: center;
+  width: 10vmax;  height: 10vmax;
+  border: none;
+  border-radius: 10%;
+  background-color: transparent;
+  box-shadow: 5px 5px 20px #0003,
+             -5px -5px 20px #fff3;
+  // background-image:     linear-gradient(-45deg,#0004 , #fff0 50%, #fff4)    ; 
+  // background-blend-mode: difference;
+  // mix-blend-mode: difference;
+  filter: 
+  brightness(110%)
+   blur(1px)
+   saturate(-1)
+   ;
+  // &:hover{  }
+  &::after{
+    // content: ""; 
+    pointer-events: none;
+    display: block; height: 100%; width: 100%; position: absolute;
+    background-image:linear-gradient(135deg,#fff0 , #fff4 50%, #fff0);
+  border-radius: 10%;
+  mix-blend-mode: darken;
+  }
+  &__one{
+    display: block; width: 80%; height: 80%;
+    transform: none;
+    margin: 0 auto;
+    border-radius: 10%;
+    background-color: transparent;
+    // background-image: linear-gradient(135deg,#0004 , #0000 50%, #fff4); 
+    // box-shadow: 0px 0px 10px #7777;
+    // border-radius: 50px;
+// background: #e0e0e0;
+pointer-events: all;
+transition: all .5s;
+box-shadow:  20px 20px 20px #0003,
+             -20px -20px 20px #fff3;
+    &:hover{
+      box-shadow:  -20px -20px 20px #0003,
+             20px 20px 20px #fff3;
+    }
+    // mix-blend-mode: difference;
+    // filter: brightness(100%) blur(0px);
+
+    // border:  solid #fff;
+    // border: none;
+    // border-image: linear-gradient(135deg,#fff4, #0004) 10/ 10% 10% ;
+    // background-image: url(img/Banana_Oat_Pancakes_with_Blueberries.jpg);
+    // background-size: 500%;
+    // background-position: 60%;
+    // background-blend-mode: color;
+    // background-clip: border-box;
+
+  }
+  &__two{
+    position: absolute;
+  }
+
+}
+.l-salon-header{
+  height: 100vh; 
+  width: 100%;
+  position: absolute;
+  top: 0;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+  align-items: center;
+  pointer-events: none;
+  z-index: 11;
+  overflow: hidden;
+  &__logo{
+    width: 30%; height: 25%;
+    transition: all 0.3s;
+    // &:hover{      transform: scale(1.15);      // z-index: 10;    }
+    @media (max-width: 900px) {
+      width: 25vh;
+    }
+  }
+  &__text{
+    width: 100%; height: 100%;
+    border-radius: 50%;
+    display: grid; place-items: center;
+    background-color: #ccc;
+    pointer-events: all;
+    position: relative;
+  }
+  &__subtitle{
+    position: absolute;
+    height: calc(100% / 3);
+    // transform: translateY(25%);
+  }
+  &__title{
+    font-size: 3vmax;
+  }
+  /* ハンバーガーメニューの位置と色 */
+  &__input{
+    position: absolute;
+    height:  2vh;
+    width: 4vh;
+    right: 0; top: 0; bottom: 0;
+    margin: auto;
+    z-index: 100;
+    cursor: pointer;
+    pointer-events: all;
+  }
+  /* メニュー線（本体と before と after で３本表示する） */
+  &__bar{
+    display: block;
+    height: 100%;  width: 100%;
+    border-radius: .5vh;
+    border-top: .5vh solid #700;
+    position: absolute;
+    transition: all 0.5s;
+    transform-origin: left;
+  }
+  &__underbar{
+    border-top: unset;
+    border-bottom: .5vh solid #700;
+  }
+  /* メニュー装飾 */
+  &__output{
+    width: clamp(1vw, 100vw, 1440px);
+    height: 100vh;
+    position: fixed;
+    top: 0;
+    left: 50%; transform: translateX(-50%);
+    opacity: 0;
+    pointer-events: none;
+    background-color: #bbb;
+    transition: all 0.5s; 
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+  }
+  &__rect9{
+    background-color: #7c7;
+    transition: all .3s;
+    // &:hover{transform: scale(1.15);}
+  }
+  &__link{
+    height: 100%; width: 100%;
+    display: grid;
+    place-items: center;
+    font-size: 3vmax;
+    border: 1px solid #000;
+  }
+  
+}
+
+/* メニューをオープンしたら三本線を×にする */
+#l-salon-header__input{
+  display: none;
+  &:checked{
+    & ~ .l-salon-header__input{
+      & .l-salon-header__bar{
+        transform: rotate(20deg);
+      }
+      & .l-salon-header__underbar{
+        transform: rotate(-20deg);
+      }
+    }
+  }
+}
+/* メニューの出し入れ */
+#l-salon-header__input:checked ~ .l-salon-header__output{
+  opacity: 1;
+  pointer-events: all;
+}
+
+.p-contents{
+  &__lists{
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    grid-auto-rows: 50vh;
+    grid-auto-flow: dense;
+    
+    
+  }
+}
+.c-rect{
+  &__visual{
+    overflow: hidden;
+    display: grid;
+    place-items: center end;
+    text-align: center;
+    background-size: cover;
+    background-image: url(img/tea1.jpg);
+    box-shadow: 5px 5px 20px #0003,
+             -5px -5px 20px #fff3;
+  }
+  &__title{
+    width: clamp(0px, 100%, 720px);
+    font-size: 5vmax;
+    font-weight: 100;
+    scale: 1 3;
+    letter-spacing: 2vmax;
+    pointer-events: none;
+  }
+  &__desc{
+    width: clamp(0px, 100%, 720px);
+    
+    text-align: end;
+    padding: 0 5vw;
+    box-shadow: 5px 5px 20px #0003,
+             -5px -5px 20px #fff3;
+
+    // display: grid;
+    // grid-template-columns: repeat(2, 1fr);
+    // grid-template-rows: repeat(3, 1fr);
+    // place-items: center end;
+    // padding: 5vmax 0;
+    &--left{
+      margin-left: calc(50vw - (clamp(0px, 50vw, 720px)));
+      text-align: start;
+    }
+  }
+  &__text{
+    grid-area: 2 span/2 span;
+    padding: 5vmax 0 ;
+    height: 35vh;
+
+
+  }
+}
+.c-btn{
+  display: inline-block;
+  border: 3px solid #000;
+  border-radius: 2vmin;
+  font-size: 2vmin;
+  background-color: #ddd;
+  padding: 1vmin 2vmin
+}
+
+.u-right{
+  justify-items: start;
+  grid-column-start: 2;
+}
+
+// アニメ停止
+.p-fv__img{ animation-play-state: paused;}
